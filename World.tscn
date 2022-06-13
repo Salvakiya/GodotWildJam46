@@ -1,0 +1,70 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Grass.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Humanoid.tscn" type="PackedScene" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Grass" parent="." instance=ExtResource( 1 )]
+position = Vector2( 23, 24 )
+
+[node name="Grass2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 45, 24 )
+
+[node name="Grass3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 20, 23 )
+
+[node name="Grass4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 55, 29 )
+
+[node name="Grass5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 41, 29 )
+
+[node name="Grass6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 32, 33 )
+
+[node name="Grass8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 60, 25 )
+
+[node name="Grass18" parent="." instance=ExtResource( 1 )]
+position = Vector2( 25, 33 )
+
+[node name="Grass19" parent="." instance=ExtResource( 1 )]
+position = Vector2( 21, 32 )
+
+[node name="Grass21" parent="." instance=ExtResource( 1 )]
+position = Vector2( 60, 34 )
+
+[node name="Grass22" parent="." instance=ExtResource( 1 )]
+position = Vector2( 73, 31 )
+
+[node name="Grass23" parent="." instance=ExtResource( 1 )]
+position = Vector2( 54, 40 )
+
+[node name="Grass24" parent="." instance=ExtResource( 1 )]
+position = Vector2( 60, 41 )
+
+[node name="Grass25" parent="." instance=ExtResource( 1 )]
+position = Vector2( 44, 34 )
+
+[node name="Grass27" parent="." instance=ExtResource( 1 )]
+position = Vector2( 32, 31 )
+
+[node name="Grass10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 16, 21 )
+
+[node name="Grass11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 16, 29 )
+
+[node name="Grass13" parent="." instance=ExtResource( 1 )]
+position = Vector2( 31, 23 )
+
+[node name="Grass7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 40, 19 )
+
+[node name="Humanoid" parent="." instance=ExtResource( 2 )]
+position = Vector2( 32, 23 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.5, 0.5 )

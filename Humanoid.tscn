@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://assets/charactersheet.png" type="Texture" id=1]
 [ext_resource path="res://Humanoid.gd" type="Script" id=2]
@@ -13,6 +13,51 @@ shader_param/use_palette_alpha = false
 shader_param/frame = 3
 shader_param/fps = 0.0
 shader_param/palette = ExtResource( 5 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 1 )
+region = Rect2( 16, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 1 )
+region = Rect2( 48, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 1 )
+region = Rect2( 80, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 1 )
+region = Rect2( 96, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 1 )
+region = Rect2( 112, 32, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ) ],
+"loop": true,
+"name": "Run",
+"speed": 15.0
+}, {
+"frames": [ SubResource( 31 ), SubResource( 32 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 2.0
+} ]
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
@@ -38,17 +83,25 @@ region = Rect2( 64, 16, 16, 16 )
 atlas = ExtResource( 1 )
 region = Rect2( 80, 16, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=8]
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 1 )
+region = Rect2( 96, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 1 )
+region = Rect2( 112, 16, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=33]
 animations = [ {
-"frames": [  ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
 "loop": true,
 "name": "Run",
 "speed": 15.0
+}, {
+"frames": [ SubResource( 23 ), SubResource( 24 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 2.0
 } ]
 
 [sub_resource type="ShaderMaterial" id=22]
@@ -59,22 +112,6 @@ shader_param/frame = 3
 shader_param/fps = 6.0
 shader_param/palette = ExtResource( 3 )
 
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 1 )
-region = Rect2( 32, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 1 )
-region = Rect2( 64, 0, 16, 16 )
-
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 16, 16 )
@@ -82,6 +119,14 @@ region = Rect2( 0, 0, 16, 16 )
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 1 )
 region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 1 )
+region = Rect2( 96, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 1 )
@@ -91,13 +136,21 @@ region = Rect2( 0, 0, 16, 16 )
 atlas = ExtResource( 1 )
 region = Rect2( 80, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 1 )
-region = Rect2( 96, 0, 16, 16 )
+region = Rect2( 64, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 1 )
@@ -109,19 +162,14 @@ region = Rect2( 16, 0, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
-"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 11 ), SubResource( 11 ), SubResource( 11 ), SubResource( 11 ), SubResource( 11 ), SubResource( 11 ) ],
-"loop": true,
-"name": "Squint",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ) ],
-"loop": true,
-"name": "Normal",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ) ],
 "loop": true,
 "name": "Happy",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ) ],
+"loop": true,
+"name": "Sad",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ) ],
@@ -129,9 +177,14 @@ animations = [ {
 "name": "Angry",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ) ],
+"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ) ],
 "loop": true,
-"name": "Sad",
+"name": "Normal",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 11 ), SubResource( 11 ), SubResource( 11 ), SubResource( 11 ), SubResource( 11 ), SubResource( 11 ) ],
+"loop": true,
+"name": "Squint",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 21 ), SubResource( 21 ), SubResource( 21 ), SubResource( 21 ), SubResource( 21 ), SubResource( 21 ) ],
@@ -140,22 +193,36 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Humanoid" type="Node2D"]
-position = Vector2( 7, 9 )
+[sub_resource type="CircleShape2D" id=34]
+radius = 4.12311
+
+[node name="Humanoid" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
 [node name="Visual" type="Node2D" parent="."]
+position = Vector2( 0, -7 )
 
-[node name="Body" type="AnimatedSprite" parent="Visual"]
+[node name="BodyA" type="AnimatedSprite" parent="Visual"]
+visible = false
 material = SubResource( 1 )
 frames = SubResource( 8 )
-animation = "Run"
-frame = 3
+animation = "Idle"
+frame = 1
+playing = true
+
+[node name="BodyB" type="AnimatedSprite" parent="Visual"]
+material = SubResource( 1 )
+frames = SubResource( 33 )
+animation = "Idle"
+frame = 1
 playing = true
 
 [node name="Eyes" type="AnimatedSprite" parent="Visual"]
 material = SubResource( 22 )
 frames = SubResource( 9 )
 animation = "Angry"
-frame = 1
+frame = 6
 playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 34 )

@@ -5,6 +5,7 @@ enum FACE{HAPPY,SAD,NORMAL,ANGRY,SQUINT}
 enum LIGHT{DEFAULT,PURE, LIGHT, GRAY, DARK}
 
 export(FACE) var face_state = FACE.NORMAL
+var next_face_state = FACE.NORMAL
 export(LIGHT) var light_state = LIGHT.PURE
 
 const MOVE_SPEED = 60

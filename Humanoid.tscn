@@ -8,10 +8,9 @@
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 4 )
-shader_param/skip_first_row = false
-shader_param/use_palette_alpha = false
-shader_param/frame = 3
-shader_param/fps = 0.0
+shader_param/skip_first_row = true
+shader_param/frame = 1
+shader_param/fps = 1.0
 shader_param/palette = ExtResource( 5 )
 
 [sub_resource type="AtlasTexture" id=25]
@@ -107,18 +106,9 @@ animations = [ {
 [sub_resource type="ShaderMaterial" id=22]
 shader = ExtResource( 4 )
 shader_param/skip_first_row = true
-shader_param/use_palette_alpha = false
 shader_param/frame = 3
 shader_param/fps = 6.0
 shader_param/palette = ExtResource( 3 )
-
-[sub_resource type="AtlasTexture" id=18]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=19]
-atlas = ExtResource( 1 )
-region = Rect2( 96, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 1 )
@@ -127,22 +117,6 @@ region = Rect2( 0, 0, 16, 16 )
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 1 )
 region = Rect2( 80, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 1 )
-region = Rect2( 64, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 1 )
-region = Rect2( 32, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 1 )
@@ -160,16 +134,45 @@ region = Rect2( 0, 0, 16, 16 )
 atlas = ExtResource( 1 )
 region = Rect2( 16, 0, 16, 16 )
 
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 1 )
+region = Rect2( 96, 0, 16, 16 )
+
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
-"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ) ],
-"loop": true,
-"name": "Sad",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ), SubResource( 17 ) ],
 "loop": true,
 "name": "Angry",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ) ],
+"loop": true,
+"name": "Happy",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 21 ), SubResource( 21 ), SubResource( 21 ), SubResource( 21 ), SubResource( 21 ), SubResource( 21 ) ],
+"loop": true,
+"name": "Suprised",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ) ],
@@ -182,14 +185,9 @@ animations = [ {
 "name": "Squint",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 15 ) ],
+"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ), SubResource( 19 ) ],
 "loop": true,
-"name": "Happy",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 21 ), SubResource( 21 ), SubResource( 21 ), SubResource( 21 ), SubResource( 21 ), SubResource( 21 ) ],
-"loop": true,
-"name": "Suprised",
+"name": "Sad",
 "speed": 5.0
 } ]
 
@@ -207,18 +205,21 @@ visible = false
 material = SubResource( 1 )
 frames = SubResource( 8 )
 animation = "Idle"
+frame = 1
 playing = true
 
 [node name="BodyB" type="AnimatedSprite" parent="Visual"]
 material = SubResource( 1 )
 frames = SubResource( 33 )
 animation = "Idle"
+frame = 1
 playing = true
 
 [node name="Eyes" type="AnimatedSprite" parent="Visual"]
 material = SubResource( 22 )
 frames = SubResource( 9 )
 animation = "Normal"
+frame = 6
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

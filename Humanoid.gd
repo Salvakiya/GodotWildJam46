@@ -2,17 +2,17 @@ extends KinematicBody2D
 
 
 enum FACE{HAPPY,SAD,NORMAL,ANGRY,SQUINT}
-enum LIGHT{PURE, LIGHT, GRAY, DARK}
+enum LIGHT{DEFAULT,PURE, LIGHT, GRAY, DARK}
 
-var face_state = FACE.NORMAL
-var light_state = LIGHT.PURE
+export(FACE) var face_state = FACE.NORMAL
+export(LIGHT) var light_state = LIGHT.PURE
 
 const MOVE_SPEED = 60
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	change_light(light_state)
-	change_expression(FACE.SQUINT)
+	change_expression(face_state)
 	$Visual/BodyA.visible = !$Visual/BodyB.visible
 	$Visual/BodyB.visible = !$Visual/BodyA.visible
 	$Visual/Eyes.connect("animation_finished", self, "change_expression", [FACE.NORMAL])
@@ -50,6 +50,10 @@ func _physics_process(delta):
 	)
 	if Input.is_action_just_pressed("attack"):
 		change_expression(FACE.ANGRY)
+		light_state+=1
+		if light_state==5:
+			light_state=1
+		change_light(light_state)
 	if input.x!=0 or input.y!=0:
 		$Visual/BodyA.animation = "Run"
 		$Visual/BodyB.animation = "Run"

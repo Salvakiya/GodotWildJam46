@@ -68,7 +68,7 @@ current = true
 zoom = Vector2( 0.25, 0.25 )
 
 [node name="Orb" parent="YSort" instance=ExtResource( 3 )]
-frame = 18
+frame = 19
 
 [node name="TileMap" type="TileMap" parent="YSort"]
 tile_set = SubResource( 14 )
@@ -166,3 +166,16 @@ position = Vector2( 190, 15 )
 
 [node name="Grass29" parent="YSort/Grasses" instance=ExtResource( 1 )]
 position = Vector2( 190, 15 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -14.0
+
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer"]
+margin_right = 27.0
+margin_bottom = 14.0
+text = "Test"

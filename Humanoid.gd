@@ -17,7 +17,7 @@ func _ready():
 	$Visual/BodyA.visible = !$Visual/BodyB.visible
 	$Visual/BodyB.visible = !$Visual/BodyA.visible
 	$Visual/Eyes.connect("animation_finished", self, "change_expression", [FACE.NORMAL])
-	
+
 
 func change_expression(to):
 	if face_state == to:

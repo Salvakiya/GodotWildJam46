@@ -263,21 +263,18 @@ visible = false
 material = SubResource( 1 )
 frames = SubResource( 8 )
 animation = "Idle"
-frame = 1
 playing = true
 
 [node name="BodyB" type="AnimatedSprite" parent="Visual"]
 material = SubResource( 36 )
 frames = SubResource( 33 )
 animation = "Idle"
-frame = 1
 playing = true
 
 [node name="Eyes" type="AnimatedSprite" parent="Visual"]
 material = SubResource( 22 )
 frames = SubResource( 9 )
 animation = "Suprised"
-frame = 7
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

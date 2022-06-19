@@ -1,0 +1,98 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://Levels/Level.gd" type="Script" id=2]
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 2 )
+player = NodePath("YSort/Scenery")
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="TileMap" type="TileMap" parent="YSort"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 10 )
+cell_tile_origin = 1
+cell_y_sort = true
+collision_layer = 3
+collision_mask = 3
+format = 1
+
+[node name="Orbs" type="YSort" parent="YSort"]
+
+[node name="Demons" type="YSort" parent="YSort"]
+
+[node name="Scenery" type="YSort" parent="YSort"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.25, 0.25 )
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="win_message" type="CenterContainer" parent="HUD"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="PanelContainer" type="PanelContainer" parent="HUD/win_message"]
+margin_left = 505.0
+margin_top = 293.0
+margin_right = 519.0
+margin_bottom = 307.0
+
+[node name="Label" type="Label" parent="HUD/win_message/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 264.0
+margin_bottom = 21.0
+text = "You win! you have collected all the orbs!"
+
+[node name="loose_message" type="CenterContainer" parent="HUD"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="PanelContainer" type="PanelContainer" parent="HUD/loose_message"]
+margin_left = 505.0
+margin_top = 293.0
+margin_right = 519.0
+margin_bottom = 307.0
+
+[node name="Label" type="Label" parent="HUD/loose_message/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 263.0
+margin_bottom = 21.0
+text = "You have been consumed by darkness..."
+
+[node name="orbcounter" type="HBoxContainer" parent="HUD"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Label" type="Label" parent="HUD/orbcounter"]
+margin_top = 13.0
+margin_right = 99.0
+margin_bottom = 27.0
+text = "Orbs Collected:"
+
+[node name="count" type="Label" parent="HUD/orbcounter"]
+margin_left = 103.0
+margin_top = 13.0
+margin_right = 111.0
+margin_bottom = 27.0
+text = "0"
+
+[node name="Label2" type="Label" parent="HUD/orbcounter"]
+margin_left = 115.0
+margin_top = 13.0
+margin_right = 120.0
+margin_bottom = 27.0
+text = "/"
+
+[node name="total" type="Label" parent="HUD/orbcounter"]
+margin_left = 124.0
+margin_top = 13.0
+margin_right = 132.0
+margin_bottom = 27.0
+text = "0"

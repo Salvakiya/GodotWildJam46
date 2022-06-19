@@ -20,7 +20,6 @@ func _run() -> void:
 	assert(false, "No selected node has 'texture' property with a valid Texture.")
 
 func generate_palette_from(image: Image, texture_path: String):
-	print("Generating palette for: ", texture_path)
 	
 	var colors := []
 	image.lock()
@@ -53,4 +52,3 @@ func generate_palette_from(image: Image, texture_path: String):
 	palette.save_png(png_path)
 	get_editor_interface().get_resource_filesystem().scan()
 	
-	print("Generated: ", png_path)

@@ -12,6 +12,8 @@ func setup(parent):
 	connect("expression",parent,"change_expression")
 	
 	$HurtBox.connect("body_entered",self,"do_damage")
+	
+	parent.MOVE_SPEED-=rand_range(0,10)
 
 func do_damage(body):
 	if is_instance_valid(Globals.player) and body == Globals.player:
@@ -62,7 +64,6 @@ func roam():
 	var y = int(rand_range(0,6))-3
 	self.target_position = global_position + Vector2(x*16,y*5)
 	var tm:TileMap = Globals.tilemap
-	print(tm.world_to_map(target_position))
 	if tm.get_cellv(tm.world_to_map(target_position)) != tm.INVALID_CELL:
 		
 		call_deferred("roam")

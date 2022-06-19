@@ -49,7 +49,14 @@ func change_expression(to):
 			$Visual/Eyes.animation = "Squint"
 
 func change_light(to):
+	if to <1:
+		to = 1
+	elif to>4:
+		to = 4
+	if light_state == to:
+		return
 	light_state = to
+	change_expression(Globals.FACE.SAD)
 	var material:ShaderMaterial = $Visual/BodyA.material
 	material.set_shader_param("frame",to)
 	material = $Visual/BodyB.material
